@@ -22,6 +22,10 @@ module.exports = env => {
         {
           test: /\.(ts|tsx)?$/,
           use: ["babel-loader"]
+        },
+        {
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
         }
       ]
     },
@@ -41,7 +45,8 @@ module.exports = env => {
     },
 
     devServer: {
-      open: true
+      open: true,
+      overlay: true
     },
 
     plugins: [
