@@ -2,7 +2,7 @@ Ongoing...
 
 ## Description
 
-My solution for the Pleo frontend-challenge (https://github.com/pleo-io/frontend-challenge).
+A solution for the Pleo frontend-challenge (https://github.com/pleo-io/frontend-challenge) for training purposes.
 
 ## Stack
 
