@@ -1,18 +1,17 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
-import { Expense } from '../../actions';
-import { StyledExpenseListItem, Receipt, Amount, Value, Currency } from './style';
+import history from '../../../../utils/history'
+import { Expense } from '../../../../api/types';
+import { StyledExpenseTableItem, Receipt, Amount, Value, Currency } from './style';
 
 interface Props {
   expense: Expense;
 }
 
-const ExpenseListItem: React.FC<Props> = (props: Props) => {
+const ExpenseTableItem: React.FC<Props> = (props: Props) => {
   const { id, merchant, date, user, receipts, amount, category } = props.expense;
-  let history = useHistory()
 
   return (
-    <StyledExpenseListItem onClick={() => history.push(`/${id}`)}>
+    <StyledExpenseTableItem onClick={() => history.push(`/${id}`)}>
       <span>{merchant}</span>
       <span>{date}</span>
       <span>{category}</span>
@@ -22,8 +21,8 @@ const ExpenseListItem: React.FC<Props> = (props: Props) => {
         <Value>{amount.value}</Value>
         <Currency>{amount.currency}</Currency>
       </Amount>
-    </StyledExpenseListItem>
+    </StyledExpenseTableItem>
   );
 };
 
-export default ExpenseListItem;
+export default ExpenseTableItem;

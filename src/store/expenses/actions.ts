@@ -43,8 +43,9 @@ export const fetchExpenses = () => async (dispatch: Dispatch<ExpensesActions>) =
   }
 };
 
-export const fetchExpense = (id: string) => async (dispatch: Dispatch) => {
+export const fetchExpense = (id: string) => async (dispatch: Dispatch<ExpensesActions>) => {
   dispatch(fetchExpensesRequest());
+
   try {
     const expense = await getExpenseById(id);
 

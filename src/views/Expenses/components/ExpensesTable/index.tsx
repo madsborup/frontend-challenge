@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import { ExpensesData } from '../../../../actions';
+import { ExpensesData } from '../../../../store/expenses';
 import withContainer from '../../../viewHelpers/withContainer';
 import LoadingView from '../../../viewHelpers/LoadingView';
 import ExpensesListItem from '../ExpenseTableItem';
-import theme from '../../../../utils/theme';
 import { StyledExpensesTable, TableHeader, TableColumnTitle } from './style'
 
 interface Props {
@@ -12,9 +10,10 @@ interface Props {
 }
 
 const ExpensesTable: React.FC<Props> = (props: Props) => {
-  const TableColumnTitles = ['Merchant', 'Date', 'Category', 'Person', 'Receipts', 'Amount'];
+  const TableColumnTitles = ['Merchant', 'Date', 'Category', 'User', 'Receipts', 'Amount'];
+  const { isFetching, expenses } = props.expenses;
 
-  return props.expenses.isFetching ? (
+  return isFetching ? (
     <LoadingView />
   ) : (
     <StyledExpensesTable>
@@ -23,7 +22,7 @@ const ExpensesTable: React.FC<Props> = (props: Props) => {
           <TableColumnTitle>{title}</TableColumnTitle>
         ))}
       </TableHeader>
-      {props.expenses.items.map(expense => (
+      {expenses.map(expense => (
         <ExpensesListItem expense={expense} />
       ))}
     </StyledExpensesTable>

@@ -1,3 +1,3 @@
 export * from './types'
-export * from './reducers'
+export * from './reducer'
 export * from './actions'

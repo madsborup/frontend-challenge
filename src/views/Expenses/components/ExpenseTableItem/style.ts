@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import theme from '../../../../utils/theme'
 
-export const StyledExpenseListItem = styled.div`
+export const StyledExpenseTableItem = styled.div`
   display: grid;
   grid-template-columns: 1fr repeat(5, 120px);
   align-items: center;
@@ -10,7 +10,7 @@ export const StyledExpenseListItem = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: ${theme.colors.subHeading};
+    background: ${theme.colors.hover};
   }
 `;
 
