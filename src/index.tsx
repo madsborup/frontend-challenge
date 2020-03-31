@@ -1,17 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
+import history from './utils/history'
 import { store } from "./store";
 import { GlobalStyle } from "./utils/globalStyle";
 import Routes from "./Routes";
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router history={history}>
       <GlobalStyle />
       <Routes />
-    </BrowserRouter>
+    </Router >
   </Provider>,
   document.getElementById("root")
 );

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import theme from '../../utils/theme'
 
-export const SIDEBAR_WIDTH = 300;
-export const MIN_FIRST_COLUMN_WIDTH = 220;
+export const MIN_FIRST_COLUMN_WIDTH = 200;
 export const MAX_FIRST_COLUMN_WIDTH = 260;
 export const MIN_SECOND_COLUMN_WIDTH = 968;
 export const MAX_SECOND_COLUMN_WIDTH = 2560;
@@ -64,6 +63,7 @@ export const View = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${theme.spacing.large};
+  background: ${theme.colors.background};
 `;
 
 export const Content = styled.div`

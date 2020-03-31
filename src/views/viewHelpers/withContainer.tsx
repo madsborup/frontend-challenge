@@ -6,7 +6,6 @@ const StyledContainer = styled.div`
   background: ${theme.colors.white};
   border: ${theme.BORDER};
   border-radius: ${theme.BORDER_RADIUS};
-  height: 100%;
 `;
 
 const withContainer = (Component: React.ComponentType<any>) => (props: any) => {
