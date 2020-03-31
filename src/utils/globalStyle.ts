@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${theme.font.family.display};
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizelegibility;
+    box-sizing: border-box;
   }
 
   body {

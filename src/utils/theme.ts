@@ -1,5 +1,5 @@
 const BASELINE = 20;
-const BORDER_RADIUS = "4px";
+const BORDER_RADIUS = '4px';
 
 const SCALES = {
   XXSMALL: 0.25,
@@ -13,22 +13,24 @@ const SCALES = {
 
 export default {
   colors: {
-    white: "#FFFFFF",
-    black: "#000000",
-    primary: "#1C40FB",
-    background: "#F8F9FB",
-    border: "#F1F2F6",
-    subHeading: "#F3F3F5",
+    white: '#FFFFFF',
+    black: '#000000',
+    primary: '#1C40FB',
+    primaryMuted: '#4a67ff',
+    background: '#FAFAFA',
+    border: '#F1F2F6',
+    subHeading: '#F3F3F5',
+    hover: '#F8F9FB'
   },
   font: {
     family: {
       display: `'Inter', sans-serif`
     },
     colors: {
-      heading: "#000000",
-      text: "#2f3037",
-      textMuted: "#484952",
-      alt: "#A8A8A8",
+      heading: '#000000',
+      text: '#2f3037',
+      textMuted: '#484952',
+      alt: '#A8A8A8'
     },
     size: {
       xsmall: `${SCALES.XSMALL + 0.2}rem`,
@@ -36,7 +38,7 @@ export default {
       regular: `${SCALES.MEDIUM}rem`,
       h1: `${SCALES.XLARGE}rem`,
       h2: `${SCALES.LARGE}rem`,
-      h3: `${SCALES.MEDIUM + 0.25}rem`,
+      h3: `${SCALES.MEDIUM + 0.25}rem`
     }
   },
   spacing: {
@@ -47,6 +49,6 @@ export default {
     large: `${SCALES.LARGE * BASELINE}px`,
     xlarge: `${SCALES.XLARGE * BASELINE}px`
   },
-  BORDER: "1px solid #F1F2F6",
+  BORDER: '1px solid #F1F2F6',
   BORDER_RADIUS
 };
