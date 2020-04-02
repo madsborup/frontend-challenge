@@ -2,7 +2,8 @@ import { ExpensesData, ActionTypes, ExpensesActions } from './types';
 
 const INITIAL_STATE: ExpensesData = {
   isFetching: false,
-  expenses: [],
+  expenses: undefined,
+  total: 0,
   currentExpense: undefined
 };
 
@@ -17,7 +18,8 @@ const expenses = (state: ExpensesData = INITIAL_STATE, action: ExpensesActions) 
       return {
         ...state,
         isFetching: false,
-        expenses: action.expenses
+        expenses: action.expenses,
+        total: action.total
       };
     case ActionTypes.FETCH_EXPENSE_SUCCESS:
       return {

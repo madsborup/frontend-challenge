@@ -1,8 +1,13 @@
 import { Expense } from '../types'
 import { readQuery, writeQuery } from '../axios-query'
 
-export const getExpenses = () => {
-  return readQuery<{expenses: Expense[]; total: number}>('/expenses');
+export interface ExpenseQueryParams {
+  limit: number
+  offset: number
+}
+
+export const getExpenses = (query: ExpenseQueryParams) => {
+  return readQuery<{expenses: Expense[]; total: number}>(`/expenses?limit=${query.limit}&offset=${query.offset}`);
 }
 
 export const getExpenseById = (id: string) => {

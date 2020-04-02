@@ -1,9 +1,8 @@
 import { Dispatch } from 'redux';
 import { Expense } from '../../api/types';
-import { getExpenses, getExpenseById } from '../../api/queries/expenses';
+import { getExpenses, getExpenseById, ExpenseQueryParams } from '../../api/queries/expenses';
 import {
   ActionTypes,
-  ExpensesActions,
   FetchExpensesRequestAction,
   FetchExpenseSuccessAction,
   FetchExpensesSuccessAction
@@ -15,10 +14,14 @@ export const fetchExpensesRequest = (): FetchExpensesRequestAction => {
   };
 };
 
-export const fetchExpensesSuccess = (expenses: Expense[]): FetchExpensesSuccessAction => {
+export const fetchExpensesSuccess = (
+  expenses: Expense[],
+  total: number
+): FetchExpensesSuccessAction => {
   return {
     type: ActionTypes.FETCH_EXPENSES_SUCCESS,
-    expenses
+    expenses,
+    total
   };
 };
 
@@ -29,21 +32,23 @@ export const fetchExpenseSuccess = (expense: Expense): FetchExpenseSuccessAction
   };
 };
 
-export const fetchExpenses = () => async (dispatch: Dispatch<ExpensesActions>) => {
+export const fetchExpenses = (query: ExpenseQueryParams) => async (dispatch: Dispatch) => {
   dispatch(fetchExpensesRequest());
 
-  try {
-    const data = await getExpenses();
+  setTimeout(async () => {
+    try {
+      const data = await getExpenses(query);
 
-    if (data && data.total > 0) {
-      dispatch(fetchExpensesSuccess(data.expenses));
+      if (data && data.total > 0) {
+        dispatch(fetchExpensesSuccess(data.expenses, data.total));
+      }
+    } catch (e) {
+      console.log('Error fetching expenses: ', e);
     }
-  } catch (e) {
-    console.log('Error fetching expenses: ', e);
-  }
+  }, 1000);
 };
 
-export const fetchExpense = (id: string) => async (dispatch: Dispatch<ExpensesActions>) => {
+export const fetchExpense = (id: string) => async (dispatch: Dispatch) => {
   dispatch(fetchExpensesRequest());
 
   try {

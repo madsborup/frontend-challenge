@@ -9,7 +9,8 @@ export enum ActionTypes {
 
 export interface ExpensesData {
   isFetching: boolean;
-  expenses: Expense[];
+  expenses: Expense[] | undefined;
+  total: number;
   currentExpense: Expense | undefined;
 }
 
@@ -24,6 +25,7 @@ export type FetchExpensesAction = {
 export type FetchExpensesSuccessAction = {
   type: ActionTypes.FETCH_EXPENSES_SUCCESS;
   expenses: Expense[];
+  total: number;
 }
 
 export type FetchExpenseSuccessAction = {
