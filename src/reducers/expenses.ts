@@ -1,4 +1,5 @@
-import { ExpensesData, ActionTypes, ExpensesActions } from './types';
+import { ExpensesData, ExpensesActions } from '../actions/expenses';
+import { ActionTypes } from '../actions/types'
 
 const INITIAL_STATE: ExpensesData = {
   isFetching: false,
