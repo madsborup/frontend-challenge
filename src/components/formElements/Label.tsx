@@ -6,5 +6,4 @@ export const StyledLabel = styled.label`
   font-weight: 500;
   color: ${theme.font.colors.textMuted};
   margin: ${theme.spacing.small} 0 ${theme.spacing.xxsmall};
-  position: relative;
 `;

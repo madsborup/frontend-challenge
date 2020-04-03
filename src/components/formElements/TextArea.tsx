@@ -8,7 +8,7 @@ interface Props {
   name: string;
   value: string | undefined;
   placeholder: string;
-  onChange: (value: string) => void
+  onChange: (value: string) => void;
 }
 
 const StyledTextArea = styled.textarea`
@@ -31,9 +31,10 @@ const TextArea: React.FC<Props> = ({ label, ...props }: Props) => {
     <React.Fragment>
       {label && <StyledLabel htmlFor={props.name}>{label}</StyledLabel>}
       <StyledTextArea
+        name={props.name}
         placeholder={props.placeholder}
         value={props.value}
-        onChange={(e) => props.onChange(e.target.value)}
+        onChange={e => props.onChange(e.target.value)}
       />
     </React.Fragment>
   );

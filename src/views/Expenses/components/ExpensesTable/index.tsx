@@ -1,7 +1,7 @@
 import React from 'react';
-import { ExpensesData } from '../../../../store/expenses';
-import withContainer from '../../../viewHelpers/withContainer';
-import LoadingView from '../../../viewHelpers/LoadingView';
+import { ExpensesData } from '../../../../../store/expenses';
+import withContainer from '../../../../viewHelpers/withContainer';
+import LoadingView from '../../../../viewHelpers/LoadingView';
 import ExpensesListItem from '../ExpenseTableItem';
 import { StyledExpensesTable, TableHeader, TableColumnTitle } from './style'
 
