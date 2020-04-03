@@ -34,7 +34,7 @@ export default {
     },
     size: {
       xsmall: `${SCALES.XSMALL + 0.2}rem`,
-      small: `${SCALES.SMALL}rem`,
+      small: `${SCALES.SMALL + 0.2}rem`,
       regular: `${SCALES.MEDIUM}rem`,
       h1: `${SCALES.XLARGE}rem`,
       h2: `${SCALES.LARGE}rem`,
